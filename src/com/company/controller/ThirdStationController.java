@@ -1,6 +1,9 @@
 package com.company.controller;
-import com.company.model.*;
-import com.company.view.*;
+
+import com.company.model.ModelManager;
+import com.company.model.Part;
+import com.company.view.View;
+import com.company.view.View3;
 
 import javax.naming.NoPermissionException;
 
@@ -18,10 +21,13 @@ public class ThirdStationController extends Controller {
     public void makeAPackage(int noOfObjects, Part whatType){
         try {
             modelManager.makeAPackage(noOfObjects, whatType);
+
         } catch (NoPermissionException e){
-            view.allert(e.getMessage());
+            View.allert(e.getMessage());
         }
     }
+    //takze nie ze sa ma zrobic samo, ale chceme interactovat s guickom
+    // party sa sami nepriradia do packagu ale pride user a zaregistruje part ktoremu sa priradi package
 
 
     public void prepareASystemPackage(String model, int noOfObjects){

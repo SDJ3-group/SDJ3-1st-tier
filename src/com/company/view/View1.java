@@ -1,10 +1,7 @@
 package com.company.view;
 
 import com.company.controller.FirstStationController;
-import com.company.model.Part;
 
-import javax.sound.midi.Soundbank;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -36,7 +33,6 @@ public class View1 extends View {
         System.out.println("write in the weight");
         float weight = (float) keyboard.nextInt();
         controller.registerCar(licensePlate,model,weight);
-        System.out.println("car registered");
-        System.out.println(controller.getAllCars());
+        //System.out.println(controller.getAllCars());
     }
 }

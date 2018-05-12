@@ -1,7 +1,5 @@
 package com.company.model;
 
-import java.lang.*;
-
 /**
  * Created by Libcoo on 11.05.2018.
  */
@@ -12,13 +10,13 @@ public class Part {
     private String model;
     private Car car;
     private Pallet pallet;
-    private java.lang.Package aPackage;
+    private Package aPackage;
 
-    public java.lang.Package getaPackage() {
+    public Package getaPackage() {
         return aPackage;
     }
 
-    public void setaPackage(java.lang.Package aPackage) {
+    public void setaPackage(Package aPackage) {
         this.aPackage = aPackage;
     }
 

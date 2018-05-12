@@ -13,6 +13,5 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         view.DisplayMenu();
         view.setView(keyboard.nextInt());
-        System.out.println("Ahoj adam");
     }
 }

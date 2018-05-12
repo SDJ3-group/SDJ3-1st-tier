@@ -1,8 +1,7 @@
 package com.company.view;
 
-import com.company.controller.FirstStationController;
 import com.company.controller.SecondStationController;
-import com.company.model.ModelManager;
+import com.company.model.Part;
 
 import java.util.Scanner;
 
@@ -23,14 +22,22 @@ public class View2 extends View {
                 break;
             } else{
 
-                disAssembleCar();
+                disAssembleCarPart();
             }
         }
 
     }
-    private void disAssembleCar(){
+
+    private void disAssembleCarPart() {
         System.out.println("write in the license plate of the car you want to dismantle");
         String licensePlate = keyboard.nextLine();
-        controller.dismantleTheCar(licensePlate);
+        System.out.println("type in the parts name");
+        String name = keyboard.nextLine();
+        System.out.println("type in the parts weight");
+        float weight = (float) keyboard.nextInt();
+        System.out.println("type in the ID");
+        int id = keyboard.nextInt();
+        Part partToBeRippedFromCar = controller.makePart(name, weight, id);
+        controller.dismantleTheCarpart(licensePlate, partToBeRippedFromCar);
     }
 }
