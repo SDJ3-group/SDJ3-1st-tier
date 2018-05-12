@@ -1,7 +1,7 @@
 package com.company;
-import com.company.view.*;
-import com.company.model.*;
-import com.company.controller.*;
+
+import com.company.model.ModelManager;
+import com.company.view.View;
 
 import java.util.Scanner;
 
@@ -13,5 +13,6 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         view.DisplayMenu();
         view.setView(keyboard.nextInt());
+        System.out.println("Ahoj adam");
     }
 }
