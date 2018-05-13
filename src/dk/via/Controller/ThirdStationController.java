@@ -1,9 +1,9 @@
-package com.company.controller;
+package dk.via.Controller;
 
-import com.company.model.ModelManager;
-import com.company.model.Part;
-import com.company.view.View;
-import com.company.view.View3;
+import dk.via.model.ModelManager;
+import dk.via.model.Part;
+import dk.via.view.View;
+import dk.via.view.View3;
 
 import javax.naming.NoPermissionException;
 

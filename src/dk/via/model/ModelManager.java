@@ -1,4 +1,4 @@
-package com.company.model;
+package dk.via.model;
 
 import javax.naming.NoPermissionException;
 import java.util.ArrayList;

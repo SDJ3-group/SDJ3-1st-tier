@@ -1,4 +1,4 @@
-package com.company.controller.Rmi;
+package dk.via.Controller.RMI;
 
 
 import java.rmi.RemoteException;

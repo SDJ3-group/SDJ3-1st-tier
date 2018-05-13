@@ -1,6 +1,6 @@
-package com.company.controller.Rmi;
+package dk.via.Controller.RMI;
 
-import com.company.model.Pallet;
+import dk.via.model.Pallet;
 
 import java.rmi.RemoteException;
 

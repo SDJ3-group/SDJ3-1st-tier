@@ -1,4 +1,4 @@
-package com.company.model;
+package dk.via.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;

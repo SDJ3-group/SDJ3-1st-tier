@@ -1,9 +1,9 @@
-package com.company.controller;
+package dk.via.Controller;
 
-import com.company.controller.Rmi.ClientRmi;
-import com.company.model.Car;
-import com.company.model.ModelManager;
-import com.company.view.View;
+import dk.via.Controller.RMI.ClientRmi;
+import dk.via.model.Car;
+import dk.via.model.ModelManager;
+import dk.via.view.View;
 
 import java.rmi.RemoteException;
 

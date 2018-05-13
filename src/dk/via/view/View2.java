@@ -1,7 +1,7 @@
-package com.company.view;
+package dk.via.view;
 
-import com.company.controller.SecondStationController;
-import com.company.model.Part;
+import dk.via.Controller.SecondStationController;
+import dk.via.model.Part;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-package com.company.view;
+package dk.via.view;
 
-import com.company.controller.FirstStationController;
+import dk.via.Controller.FirstStationController;
 
 import java.util.Scanner;
 
@@ -33,6 +33,6 @@ public class View1 extends View {
         System.out.println("write in the weight");
         float weight = (float) keyboard.nextInt();
         controller.registerCar(licensePlate,model,weight);
-        //System.out.println(controller.getAllCars());
+        //System.out.println(Controller.getAllCars());
     }
 }

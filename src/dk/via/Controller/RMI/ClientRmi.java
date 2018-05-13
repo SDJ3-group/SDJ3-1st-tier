@@ -1,9 +1,9 @@
-package com.company.controller.Rmi;
+package dk.via.Controller.RMI;
 
-import java.net.MalformedURLException;
-import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class ClientRmi extends UnicastRemoteObject {
@@ -26,12 +26,15 @@ public class ClientRmi extends UnicastRemoteObject {
 
     public void startClient(String ipAddress, int port) {
         try {
-            rmiService = (RMIInterface) Naming.lookup(ipAddress + ":" + port);
+            System.setProperty("java.rmi.server.hostname","//localhost/RmiService");
+            Registry registry = LocateRegistry.getRegistry();
+
+            rmiService = (RMIInterface) registry.lookup("//localhost/RmiService");
+
+          //  rmiService = (RMIInterface) Naming.lookup(ipAddress + ":" + port);
         } catch (NotBoundException e) {
             e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (RemoteException e) {
+        }  catch (RemoteException e) {
             e.printStackTrace();
         }
 
