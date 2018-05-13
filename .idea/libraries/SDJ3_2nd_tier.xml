@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SDJ3-2nd-tier">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../SDJ3-2nd-tier/gson-2.8.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../SDJ3-2nd-tier/okhttp-3.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../SDJ3-2nd-tier/okio-1.14.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
