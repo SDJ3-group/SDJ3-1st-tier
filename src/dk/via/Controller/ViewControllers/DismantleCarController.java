@@ -1,7 +1,7 @@
 package dk.via.Controller.ViewControllers;
 
 import dk.via.model.ModelManager;
-import dk.via.model.Part;
+import dk.via.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,21 +17,26 @@ public class DismantleCarController extends ViewManager {
     public Button regCarPartBtn;
     public Button addPalletBtn;
     public Button backBtn;
-    public ListView carPartsLV;
+    public ListView carpartsLV;
+    public ListView palletsLV;
 
     private ArrayList<Part> carPartsArrayList = new ArrayList<>();
+    private ArrayList<Pallet> palletsArrayList = new ArrayList<>();
 
     @FXML
     public void initialize() {
 
         carPartsArrayList = ModelManager.getInstance().getCarPartsList();
-
+        palletsArrayList = ModelManager.getInstance().getPalletsList();
 
         if (!carPartsArrayList.isEmpty()) {
             ObservableList<Part> data = FXCollections.observableArrayList(carPartsArrayList);
-            System.out.println(data);
-//            carPartsLV.setItems(data);
-//            toto zatial nefunguje a nevidim si chybu.. v main view je to ok
+            carpartsLV.setItems(data);
+        }
+
+        if (!palletsArrayList.isEmpty()) {
+            ObservableList<Pallet> data = FXCollections.observableArrayList(palletsArrayList);
+            palletsLV.setItems(data);
         }
 
     }
@@ -41,7 +46,7 @@ public class DismantleCarController extends ViewManager {
     }
 
     public void addPallet(ActionEvent actionEvent) throws IOException {
-        loadView(addPalletBtn, "../../view/registerCar.fxml");
+        loadView(addPalletBtn, "../../view/addPallet.fxml");
     }
 
     public void goToMainView(ActionEvent actionEvent) throws IOException {

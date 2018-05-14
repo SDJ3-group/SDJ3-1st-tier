@@ -63,18 +63,24 @@ public class ModelManager {
     }
 
     private Pallet lookForPalletThatCanTakeThis(Part part) {
+        System.out.println("look for pallet");
         for (int i = 0; i < palletes.size(); i++) {
             if (palletes.get(i).contains(part.getName()) && palletes.get(i).getCapacity() > part.getWeight()) {
                 return palletes.get(i);
             }
+            if (palletes.get(i).getParts().isEmpty()) {
+                System.out.println("Found empty pallet");
+                return palletes.get(i);
+            }
         }
-        Pallet newPalletWithSuchParts = new Pallet(generatePalletId());
+        /*Pallet newPalletWithSuchParts = new Pallet(generatePalletId());
         if (newPalletWithSuchParts.getCapacity() > part.getWeight()) {
             palletes.add(newPalletWithSuchParts);
             return newPalletWithSuchParts;
         } else {
             return null;
-        }
+        }*/
+        return null;
     }
 
     private int generatePalletId() {
@@ -141,6 +147,14 @@ public class ModelManager {
 
     public ArrayList<Part> getCarPartsList() {
         return parts;
+    }
+
+    public ArrayList<Package> getPackagesList() {
+        return packages;
+    }
+
+    public ArrayList<Pallet> getPalletsList() {
+        return palletes;
     }
 
     public String getAllPalletes() {

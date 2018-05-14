@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.via.Controller.ViewControllers.PackagesController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="193.0" layoutY="30.0" spacing="20.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label text="Packages">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="makePckgBtn" mnemonicParsing="false" onAction="#makePackage" style="-fx-background-color: #2ECC71;" text="Make Package" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ListView fx:id="packagesLV" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+       <Button fx:id="backBtn" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToMainView" style="-fx-background-color: bebebe;" text="Back" textFill="WHITE" />
+   </children>
+</AnchorPane>

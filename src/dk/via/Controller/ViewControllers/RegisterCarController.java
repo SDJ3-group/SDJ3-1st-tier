@@ -40,13 +40,15 @@ public class RegisterCarController extends ViewManager {
 
     public void registerCar(String licensePlate, String model, float weight){
         Car incomingCar = new Car(licensePlate,model,weight);
+        View.allert("Car= " + incomingCar.toString());
+        modelManager.getCarsList().add(incomingCar);
         //modelManager.registerNewCar(incomingCar);
-        try {
+        /*try {
             ClientRmi.getInstance().getService().addCar(incomingCar);
             View.allert("The car " + incomingCar.toString() + " has been added");
         } catch (RemoteException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public String getAllCars()

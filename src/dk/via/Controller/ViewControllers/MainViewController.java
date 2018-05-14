@@ -48,6 +48,6 @@ public class MainViewController extends ViewManager {
     }
 
     public void packParts(ActionEvent actionEvent) throws IOException {
-        loadView(packPartsBtn, "../../view/registerCar.fxml");
+        loadView(packPartsBtn, "../../view/packages.fxml");
     }
 }

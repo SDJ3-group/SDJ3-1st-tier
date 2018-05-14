@@ -54,11 +54,8 @@ public class RegisterCarPartController extends ViewManager {
         String carId = carsIdCB.getValue().toString();
 
         Part part = new Part(weight, name, id);
-        part.setCar(modelManager.getCar(carId));
 
-        View.allert("The car part has been added");
-
-//        registerCar(vinNo,model,weight);
+        dismantleTheCarpart(carId, part);
 
     }
 
@@ -66,8 +63,7 @@ public class RegisterCarPartController extends ViewManager {
         loadView(backBtn, "../../view/dismantleCar.fxml");
     }
 
-    public String getAllCarParts()
-    {
+    public String getAllCarParts() {
         try {
             return ClientRmi.getInstance().getService().getAllParts().toString();//modelManager.getAllCars();
         } catch (RemoteException e) {
@@ -75,4 +71,40 @@ public class RegisterCarPartController extends ViewManager {
             return null;
         }
     }
+
+    public void dismantleTheCarpart(String vinNo, Part part) {
+        Car carToBeDismantled = modelManager.getCar(vinNo);
+        part.setCar(carToBeDismantled);
+        modelManager.getCarPartsList().add(part);
+        View.allert("Part= " + part.toString());
+        modelManager.dismantleTheCar(carToBeDismantled);
+
+
+//        Car carToBeDismantled = /*ModelManager.getInstance().getCar(vinNo);*/ null;
+        /*try {
+            carToBeDismantled = ClientRmi.getInstance().getService().getCar(vinNo);
+            part.setCar(carToBeDismantled);
+            ClientRmi.getInstance().getService().updatePart(part);
+            View.allert("the part " + part.toString() + " has been taken from the car " + carToBeDismantled);
+        } catch (RemoteException e) {
+            View.allert("there is no such a car in the warehouse");
+            e.printStackTrace();
+        }*/
+
+            /*if (!(carToBeDismantled==null)){
+                ModelManager.getInstance().dismantleTheCar(carToBeDismantled);
+                View.allert(modelManager.getAllPalletes());
+            } else View.allert("the car you wish to dismantle doesnt exist");
+        }
+        catch (NoSuchElementException e){
+            View.allert(e.getMessage());
+        }
+        */
+    }
+
+    public Part makePart(float weight, String name, int id) {
+        return new Part(weight, name, id);
+    }
+    //getne si auto podla vinka
+    //creatne part z auta a da ho na prislusnu paletu paletu
 }

@@ -17,6 +17,12 @@ public class Pallet {
         this.capacity = DEFAULTCAPACITY;
     }
 
+    public Pallet(int id, float capacity) {
+        Id = id;
+        this.parts = new ArrayList<>();
+        this.capacity = capacity;
+    }
+
     public int getId() {
         return Id;
     }
@@ -40,8 +46,9 @@ public class Pallet {
     public void setCapacity(float capacity) {
         this.capacity = capacity;
     }
+
     public boolean contains(String typeOfPart){
-        if (parts.get(0)!=null && parts.get(0).getName().equals(typeOfPart)){
+        if (!parts.isEmpty() && parts.get(0).getName().equals(typeOfPart)){
             return true;
         }
         return false;
